@@ -1,176 +1,176 @@
-# StudioExperiment-Portfolio
-
-**Dispatch Disaster (2024)**
+# **Dispatch Disaster (2024)**
 
 Studio Prototype • Large Simulation • Free on Itch.io (Playable)
 
-Itch.io Page
+*Itch.io Page:*
 
 Availability: Free
 
-**⭐ Project Overview**
+# **⭐ Project Overview**
 
 This project is a modern reimagining of my original 2020 Dispatch Disaster prototype, rebuilt with a clean architecture, improved coding standards, and more accessible gameplay. Development began as part of an experimental studio initiative I self-funded to assess whether small teams could form the foundation of a long-term studio.
 
-The project was developed by only two people—myself (programming, design, systems) and a contracted 3D artist. The art pipeline fell significantly behind schedule and required a renegotiation of the artist’s bid, which I was unable to approve due to budget constraints. The project was cancelled before reaching mobile deployment but remains fully playable in its current state and stands as a demonstration of clean code, strong system design, and my ability to manage a studio team with limited resources.
+The project was developed by only two people—myself (programming, design, systems) and a contracted 3D artist as well as a couple of QA testers. The art pipeline fell significantly behind schedule and required a renegotiation of the artist’s bid, which I was unable to approve due to budget constraints. The project was cancelled before reaching mobile deployment but remains fully playable in its current state and stands as a demonstration of clean code, strong system design, and my ability to manage a studio team with limited resources.
 
-**🎮 Gameplay Summary**
+# **🎮 Gameplay Summary**
 
-Dispatch Disaster retains the spirit of the original 2020 concept but introduces new systems and a streamlined single-player progression loop.
+*Dispatch Disaster retains the spirit of the original 2020 concept but introduces new systems and a streamlined single-player progression loop.*
 
-*Core Gameplay Loop*
+## *Core Gameplay Loop*
 
-Select a level
+-Select a level
 
-Assign upgrade points
+-Assign upgrade points
 
-Vehicle movement
+-Vehicle movement
 
-Income generation
+-Income generation
 
-Objective response time
+-Objective response time
 
-And more
+-Choose your agency: Fire, Police, or Medical
 
-Choose your agency: Fire, Police, or Medical
+-Select a spawn location for your home base
 
-Select a spawn location for your home base
+-Purchase your first vehicle
 
-Purchase your first vehicle
+-Navigate a procedurally generated map using A* pathfinding
 
-Navigate a procedurally generated map using A* pathfinding
+-Respond to emergencies before they expire
 
-Respond to emergencies before they expire
+-Manage regional reputation (0 = lose, 100 = win)
 
-Manage regional reputation (0 = lose, 100 = win)
+## *Agencies & Vehicles*
 
-*Agencies & Vehicles*
+**Each agency has:**
 
-Each agency has:
+-3 vehicle types with unique stats
 
-3 vehicle types with unique stats
+-A high-tier vehicle with a special ability (e.g., helicopters for Medical)
 
-A high-tier vehicle with a special ability (e.g., helicopters for Medical)
+-A dedicated home base (hospital, fire station, jail)
 
-A dedicated home base (hospital, fire station, jail)
+-Transport-based rewards depending on objective type
 
-Transport-based rewards depending on objective type
+## *Strategic Considerations*
 
-*Strategic Considerations*
+-Highways double movement speed
 
-Highways double movement speed
+-Busy streets reduce movement speed
 
-Busy streets reduce movement speed
+-Different emergencies have different regional effects
 
-Different emergencies have different regional effects
+-Transport objectives require returning to home base
 
-Transport objectives require returning to home base
+-Regions gain or lose points based on performance
 
-Regions gain or lose points based on performance
+## *Progression*
 
-*Progression*
+-Completing a level unlocks larger and more complex levels
 
-Completing a level unlocks larger and more complex levels
+-Every level introduces new zones or increased map sizes
 
-Every level introduces new zones or increased map sizes
+## *Public Confidence System*
 
-*Public Confidence System*
+-The central lose condition simulates real 911 agency performance:
 
-The central lose condition simulates real 911 agency performance:
+*If any region’s reputation falls to zero, you lose control of that region—resulting in overall failure.*
 
-If any region’s reputation falls to zero, you lose control of that region—resulting in overall failure.
+# **🧩 Key Features**
 
-**🧩 Key Features**
+-Fully playable 2024 reimagining of the original Dispatch Disaster
 
-Fully playable 2024 reimagining of the original Dispatch Disaster
+-Procedural map generation using coroutine-driven safe placement
 
-Procedural map generation using coroutine-driven safe placement
+-Custom A* pathfinding built around street intersection graphs
 
-Custom A* pathfinding built around street intersection graphs
+-Region reputation scoring with win/lose conditions
 
-Region reputation scoring with win/lose conditions
+-Agency-based asymmetrical gameplay
 
-Agency-based asymmetrical gameplay
+-Upgrade system affecting every aspect of gameplay
 
-Upgrade system affecting every aspect of gameplay
+-Clear, accessible gameplay loop (tested at public events)
 
-Clear, accessible gameplay loop (tested at public events)
+-Strong coding standards and a predictable architectural layout
 
-Strong coding standards and a predictable architectural layout
+-Designed for mobile compatibility (though not released on mobile)
 
-Designed for mobile compatibility (though not released on mobile)
+-Single-reference string system to eliminate typo errors
 
-Single-reference string system to eliminate typo errors
+-Free on itch.io for public testing
 
-Free on itch.io for public testing
+# **🏗️ Architecture Overview**
 
-**🏗️ Architecture Overview**
+## This 2024 version showcases some of your cleanest architectural work pre-2025. The project features:
 
-This 2024 version showcases some of your cleanest architectural work pre-2025. The project features:
+*-Major Improvements Over the 2020 Version*
 
-*Major Improvements Over the 2020 Version*
+-No god scripts
 
-No god scripts
+-Strong separation of responsibilities
 
-Strong separation of responsibilities
+-Consistent naming conventions
 
-Consistent naming conventions
+-Clear folder organization
 
-Clear folder organization
+-Heavy use of coroutines for sequenced events
 
-Heavy use of coroutines for sequenced events
+-Reduced Update usage at every layer
 
-Reduced Update usage at every layer
+-All string references consolidated into a single constants file
 
-All string references consolidated into a single constants file
+-Modular pathfinding, map generation, and emergency systems
 
-Modular pathfinding, map generation, and emergency systems
+-Planned mobile-friendly performance constraints
 
-Planned mobile-friendly performance constraints
+## *Key Systems*
 
-*Key Systems*
+-*A** *Pathfinding System*
 
-A* Pathfinding System
 Pathfinding built using intersection nodes, street weights, and dynamic cost modifiers.
 
-Map Generation System
+-*Map Generation System*
+
 Coroutine-driven to avoid heavy frame spikes, with zone-size minimums and failsafes.
 
-Emergency Spawn System
+-*Emergency Spawn System*
+
 Generates priority-based objectives with expiration timers.
 
-Region Reputation System
+-*Region Reputation System*
+
 Enforces core win/lose conditions and drives agency performance.
 
-Upgrade System
+-*Upgrade System*
+
 Player-assigned upgrades that modify gameplay variables.
 
-Vehicle Controller
+-*Vehicle Controller*
+
 Handles movement, speed modifiers, fuel, return-to-base logic, and rewards.
 
-*Code Quality Notes*
+## *Code Quality Notes*
 
-This project demonstrates:
+**This project demonstrates:**
 
-Your strongest early architecture
+-My strongest early architecture
 
-Your ability to write readable, maintainable code for non-technical collaborators
+-My ability to write readable, maintainable code for non-technical collaborators
 
-Considerations for team scalability
+-Considerations for team scalability
 
-Extreme optimization consideration for mobile targets
+-Extreme optimization consideration for mobile targets
 
-**🗂️ Key Scripts to Review**
+# **🗂️ Key Scripts to Review**
 
-Because filenames may vary once uploaded, here are the specific functional categories reviewers should see. I can map actual filenames afterward.
-
-*Core*
+### *Core*
 
 GameController – orchestrates the level flow, agency selection, upgrades
 
 LevelController – unlock logic, loading, region initialization
 
-*Systems*
+### *Systems*
 
 AStarPathfindingSystem – intersection-based, highway/busy-street weighting
 
@@ -184,7 +184,7 @@ UpgradeSystem – global modifiers applied at mission start
 
 TransportSystem – handles hospital/fire station/jail deliveries
 
-*Managers*
+### *Managers*
 
 MapGenerationManager – coroutine-driven procedural map creation
 
@@ -192,7 +192,7 @@ VehicleManager – vehicle purchasing, initialization, and pooling
 
 EmergencyManager – active objective tracking
 
-*UI*
+### *UI*
 
 UpgradeUIController – assigns points before each mission
 
@@ -200,82 +200,83 @@ HomeBasePlacementUI – interactive base placement
 
 EmergencyUI – displays timers, zones, and warnings
 
-*Utilities*
+### *Utilities*
 
 StringConstants – single reference for all gameplay strings
 
-*MathHelpers*
+### *MathHelpers*
 
 CoroutineUtilities
 
-**🧪 Development Notes**
-*Map Generation*
+# **🧪 Development Notes**
 
-Built entirely at runtime
+## *Map Generation*
 
-Zero stalling thanks to coroutine batching
+-Built entirely at runtime
 
-Failsafes guarantee zone minimum sizes
+-Zero stalling thanks to coroutine batching
 
-Randomization ensures variety across levels
+-Failsafes guarantee zone minimum sizes
 
-*Pathfinding*
+-Randomization ensures variety across levels
 
-Custom A* algorithm
+## *Pathfinding*
 
-Street types adjust movement cost
+-Custom A* algorithm
 
-Works seamlessly with player click-to-move input
+-Street types adjust movement cost
 
-*Public Testing*
+-Works seamlessly with player click-to-move input
 
-The game was showcased at events, and:
+## *Public Testing*
 
-New players consistently understood the mechanics
+**The game was showcased at events, and:**
 
-Players showed high retention
+-New players consistently understood the mechanics
 
-Gameplay loop was intuitive after a short explanation
+-Players showed high retention
+
+-Gameplay loop was intuitive after a short explanation
 
 This was a key validation of the design direction.
 
-**🚧 Why This Project Matters**
+# **🚧 Why This Project Matters**
 
-This project illustrates several important strengths:
+**This project illustrates several important strengths:**
 
-Your ability to lead and manage a small studio team
+-My ability to lead and manage a small studio team
 
-Your skill in writing code that others can learn from with minimal onboarding
+-My skill in writing code that others can learn from with minimal onboarding
 
-Your significant improvement in architecture, cleanliness, and readability
+-My significant improvement in architecture, cleanliness, and readability
 
-Your ability to build polished gameplay systems quickly
+-My ability to build polished gameplay systems quickly
 
-Your capacity to deliver a fully playable prototype with almost no budget
+-My capacity to deliver a fully playable prototype with almost no budget
 
-Your capability to safely rebuild and modernize older flawed systems
+-My capability to safely rebuild and modernize older flawed systems
 
-Your passion for optimization, consistency, and development discipline
+-My passion for optimization, consistency, and development discipline
 
 In short, this project shows what you can accomplish when you prioritize engineering quality and player clarity.
 
-**📚 Lessons Learned**
+# **📚 Lessons Learned**
 
-Importance of clear contracts and timelines when working with contractors
+-Importance of clear contracts and timelines when working with contractors
 
-How clean coding standards empower non-technical teammates
+-How clean coding standards empower non-technical teammates
 
-How to design scalable systems even in small teams
+-How to design scalable systems even in small teams
 
-That reboots often offer opportunities to fix foundational problems
+-That reboots often offer opportunities to fix foundational problems
 
-How to build mobile-friendly systems even before mobile deployment
+-How to build mobile-friendly systems even before mobile deployment
 
-How to craft gameplay that is immediately understandable to new players
+-How to craft gameplay that is immediately understandable to new players
 
-**🛠️ Tech Stack**
+# **🛠️ Tech Stack**
 
-Unity 2022.x
+Unity 2022.3
 
 C# (Object-oriented + Coroutine-driven sequencing)
 
