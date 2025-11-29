@@ -1,179 +1,171 @@
-# StudioExperiment-Portfolio
+# **Line Wars (2024)**
 
-**2024 – Line Wars**
+A Mobile Tug-of-War Strategy Prototype • Studio Leadership Project • Cancelled
 
-A Mobile Tug-of-War Strategy Prototype • Free on Itch.io
-
-Itch.io Page
+*Itch.io Page:*
 
 Availability: Free
 
-**Line Wars (2024)**
-
-Mobile Prototype • Studio Leadership Project • Cancelled
-
 Line Wars was one of two experimental prototypes developed under my self-funded studio initiative in 2024. The goal was to assemble a small team, evaluate their long-term fit, and test whether a micro-budget studio could produce high-quality mobile games. Despite the team’s initial motivation, a lack of contribution from several members ultimately led to the project’s cancellation. Remaining budget was divided proportionally among contributors based on completed work.
 
-This prototype was developed by a small team:
+## This prototype was developed by a small team:
 
-Me — Lead Programmer & Systems Architect
+-Me — Lead Programmer & Systems Architect
 
-Game Designer
+-Game Designer
 
-2D Artist
+-2D Artist
 
-Sound Designer
+-Sound Designer
 
-3 Testers
+-3 Testers
 
-The project resulted in a fully functional and well-optimized gameplay prototype featuring clean code, structured architecture, tooling for designers, and fast-paced strategic gameplay.
+*The project resulted in a fully functional and well-optimized gameplay prototype featuring clean code, structured architecture, tooling for designers, and fast-paced strategic gameplay.*
 
-**⭐ Project Overview**
+# **⭐ Project Overview**
 
 Line Wars is a mobile, single-player tug-of-war strategy game where players build structures, spawn units, upgrade abilities, progress through a tech tree, and battle through multi-lane maps. The core focus was fast decision-making and smooth automated combat, supported by an extremely optimized tick-based simulation system designed to hold a steady 60 FPS on even low-end hardware.
 
-Although art assets remained low-quality due to team inexperience and budget constraints, the game systems themselves were production-ready, and the codebase represents some of my cleanest pre-2025 work.
+*Although art assets remained low-quality due to team inexperience and budget constraints, the game systems themselves were production-ready, and the codebase represents some of my cleanest pre-2025 work.*
 
-**🎮 Gameplay Summary**
-*Menus & Progression*
+# **🎮 Gameplay Summary**
+## *Menus & Progression*
 
-On launching the game, players are presented with:
+### On launching the game, players are presented with:
 
-Upgrade Menu — Spend points earned from matches to increase unit stats (damage, health, speed, spawn times, etc.)
+**Upgrade Menu** — Spend points earned from matches to increase unit stats (damage, health, speed, spawn times, etc.)
 
-Research Menu — Unlock new units via a tech-tree progression inspired by historical RTS titles, ending at the early Iron Age in this prototype
+**Research Menu** — Unlock new units via a tech-tree progression inspired by historical RTS titles, ending at the early Iron Age in this prototype
 
-Level Select — Choose from multiple maps, each with escalating difficulty and unique lane configurations
+**Level Select** — Choose from multiple maps, each with escalating difficulty and unique lane configurations
 
-*Match Flow*
+## *Match Flow*
 
-Each level contains:
+### Each level contains:
 
-3 branching lanes that split and merge, leading to enemy and player castles
+-3 branching lanes that split and merge, leading to enemy and player castles
 
-Buildable tiles behind each castle (2 rows)
+-Buildable tiles behind each castle (2 rows)
 
-Buildings that auto-produce units after a countdown timer
+-Buildings that auto-produce units after a countdown timer
 
-Units that march down lanes, fight enemies, and attack buildings and castles
+-Units that march down lanes, fight enemies, and attack buildings and castles
 
-*Combat*
+## *Combat*
 
 Units follow lane paths using a custom node-based pathfinding system
 
-When enemies or buildings are within range:
+### When enemies or buildings are within range:
 
-Units charge to optimal attack distance
+-Units charge to optimal attack distance
 
-Enter cooldown-based attack loops
+-Enter cooldown-based attack loops
 
-Deal damage through weapon hit detection
+-Deal damage through weapon hit detection
 
-Destroying the enemy castle wins the match
+-Destroying the enemy castle wins the match
 
-Losing your own castle counts as defeat
+-Losing your own castle counts as defeat
 
-Players earn upgrade points whether they win or lose
+-Players earn upgrade points whether they win or lose
 
-*Economy*
+## *Economy*
 
-Gold is earned:
+### Gold is earned:
 
-Periodically
+-Periodically
 
-By killing enemy units
+-By killing enemy units
 
-By building certain structures
+-By building certain structures
 
-Gold is then used to:
+### Gold is then used to:
 
-Build new structures
+-Build new structures
 
-Upgrade production speed
+-Upgrade production speed
 
-Spawn higher-tier units
+-Spawn higher-tier units
 
-**🧩 Key Features**
+# **🧩 Key Features**
 
-Mobile-ready single-player strategy design
+-Mobile-ready single-player strategy design
 
-Highly optimized tick-based simulation system
+-Highly optimized tick-based simulation system
 
-Custom node graph + pathfinding
+-Custom node graph + pathfinding
 
-Clean, readable code with single-responsibility architecture
+-Clean, readable code with single-responsibility architecture
 
-Scriptable string catalog (no magic strings)
+-Scriptable string catalog (no magic strings)
 
-Custom Unity tools for:
+## Custom Unity tools for:
 
-Map creation
+-Map creation
 
-Node generation
+-Node generation
 
-Path connections
+-Path connections
 
-Full upgrade system + research tree
+-Full upgrade system + research tree
 
-Multi-lane tug-of-war combat
+-Multi-lane tug-of-war combat
 
-Buildings that auto-spawn units
+-Buildings that auto-spawn units
 
-Gold-based resource loop
+-Gold-based resource loop
 
-Designer-friendly layout supporting rapid content creation
+-Designer-friendly layout supporting rapid content creation
 
-Free on itch.io
+*Free on itch.io*
 
-**🏗️ Architecture Overview**
+# **🏗️ Architecture Overview**
 
-The architecture of Line Wars reflects a major evolution in your engineering methodology:
+## The architecture of Line Wars reflects a major evolution in my engineering methodology:
 
-*Strengths*
+### *Strengths*
 
-Clear folder organization
+-Clear folder organization
 
-Every script created for a single purpose (no god scripts)
+-Every script created for a single purpose (no god scripts)
 
-High readability for non-programmers
+-High readability for non-programmers
 
-Strong naming conventions
+-Strong naming conventions
 
-Tick system ensures stable gameplay regardless of device speed
+-Tick system ensures stable gameplay regardless of device speed
 
-Custom Unity Editor tools to avoid Play Mode for map building
+-Custom Unity Editor tools to avoid Play Mode for map building
 
-Fully event-driven upgrade and research systems
+-Fully event-driven upgrade and research systems
 
-Clean separation of:
+## Clean separation of:
 
-combat logic
+-combat logic
 
-economy
+-economy
 
-building behavior
+-building behavior
 
-pathfinding
+-pathfinding
 
-data storage
+-data storage
 
-visuals
+-visuals
 
-*Tick System*
+-*Tick System*
 
-The entire game (movement, spawning, combat) was controlled by a fixed tick clock:
+### The entire game (movement, spawning, combat) was controlled by a fixed tick clock:
 
-Ensures predictable timing
+-Ensures predictable timing
 
-Allows slower devices to keep simulation accuracy
+-Allows slower devices to keep simulation accuracy
 
-Guarantees 60 FPS flow on mobile
+-Guarantees 60 FPS flow on mobile
 
-**🗂️ Key Scripts to Review**
+# **🗂️ Key Scripts to Review**
 
-(Once the repo is uploaded, I can map exact filenames.)
-
-*Core*
+### *Core*
 
 GameFlowController — manages menus → gameplay transitions
 
@@ -181,7 +173,7 @@ TickSystem — core fixed-time simulation loop
 
 LevelController — loads maps, opponents, and difficulty
 
-*Systems*
+### *Systems*
 
 BuildingSystem — countdown timers, spawn triggers
 
@@ -195,7 +187,7 @@ UpgradeSystem — modifies player stat multipliers
 
 EconomySystem — gold generation & rewards
 
-*Managers*
+### *Managers*
 
 MapNodeManager — lane generation and editor integration
 
@@ -203,7 +195,7 @@ EnemySpawner — AI-controlled buildings & upgrades
 
 UnitManager — pooling, spawning, tracking
 
-*UI*
+### *UI*
 
 UpgradeMenuUI — displays and applies upgrade points
 
@@ -213,7 +205,7 @@ LevelSelectUI — map selection and difficulty display
 
 BuildingUI — countdown timers, readiness indicators
 
-*Utilities*
+### *Utilities*
 
 StringCatalog — centralized string reference store
 
@@ -221,84 +213,83 @@ EditorPathTool — custom inspector for lane creation
 
 DamageHelper — stat-modified damage calculations
 
-**🧪 Development Notes**
-*Optimization*
+# **🧪 Development Notes**
 
-Tick-based loop → locked 60 FPS
+## *Optimization*
 
-Strictly minimized Update usage
+-Tick-based loop → locked 60 FPS
 
-Single-responsibility scripts → lower memory churn
+-Strictly minimized Update usage
 
-Unit logic grouped into batched operations
+-Single-responsibility scripts → lower memory churn
 
-Editor tools minimized need for runtime complexity
+-Unit logic grouped into batched operations
 
-*Team Leadership*
+-Editor tools minimized need for runtime complexity
 
-You led:
+## *Team Leadership*
 
-Engineering direction
+### I led:
 
-Architecture decisions
+-Engineering direction
 
-Task planning and workload scaling
+-Architecture decisions
 
-Quality reviews
+-Task planning and workload scaling
 
-Contributor payouts proportional to meaningful work
+-Quality reviews
 
-This project demonstrates real studio management, even under heavy constraints.
+-Contributor payouts proportional to meaningful work
 
-*Gameplay*
+*This project demonstrates real studio management, even under heavy constraints.*
 
-Core loop polished and intuitive
+## *Gameplay*
 
-Minimal tutorial required at playtesting events
+-Core loop polished and intuitive
 
-Strong retention from first-time players
+-Minimal tutorial required at playtesting events
 
-Clear decision-making trees for building placement & upgrades
+-Strong retention from first-time players
 
-**🚧 Why This Project Matters**
+-Clear decision-making trees for building placement & upgrades
 
-This project illustrates:
+# **🚧 Why This Project Matters**
 
-Your ability to lead a multidisciplinary team
+## This project illustrates:
 
-Your skill in building mobile-optimized gameplay systems
+-My ability to lead a multidisciplinary team
 
-Your capacity to write clean, readable code intended for collaborators
+-My skill in building mobile-optimized gameplay systems
 
-Early mastery of editor tooling, tick systems, and pathfinding
+-My capacity to write clean, readable code intended for collaborators
 
-Your ability to recognize when a project must be cancelled and execute that leadership decision responsibly
+-Early mastery of editor tooling, tick systems, and pathfinding
 
-Proof that you can create production-quality prototypes on micro budgets
+-My ability to recognize when a project must be cancelled and execute that leadership decision responsibly
 
-The foundation for your later improvements in async operations, pooling, and fluid combat
+-Proof that you can create production-quality prototypes on micro budgets
 
-Even though it was cancelled, Line Wars is one of the best demonstrations of your discipline, leadership, and technical consistency.
+-The foundation for my later improvements in async operations, pooling, and fluid combat
 
-**📚 Lessons Learned**
+*Even though it was cancelled, Line Wars is one of the best demonstrations of my discipline, leadership, and technical consistency.*
 
-Not all team members will contribute equally
+# **📚 Lessons Learned**
 
-Strong communication and accountability are essential
+-Not all team members will contribute equally
 
-Custom tick systems work well but async frameworks offer better scalability
+-Strong communication and accountability are essential
 
-Fluid combat relies heavily on animation–logic syncing
+-Custom tick systems work well but async frameworks offer better scalability
 
-Pooling is essential for mobile performance
+-Fluid combat relies heavily on animation–logic syncing
 
-Good architecture dramatically reduces onboarding cost
+-Good architecture dramatically reduces onboarding cost
 
-Sometimes cancellation is the most responsible decision
+-Sometimes cancellation is the most responsible decision
 
-**🛠️ Tech Stack**
+# **🛠️ Tech Stack**
 
-Unity 2022.x
+Unity 2022.3
 
 C#
 
@@ -307,5 +298,3 @@ Custom tick-based engine
 Node graph + pathfinding tools
 
 Unity Editor tool scripting
-
-Itch.io deployment
