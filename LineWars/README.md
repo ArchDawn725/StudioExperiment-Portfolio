@@ -165,53 +165,42 @@ Units follow lane paths using a custom node-based pathfinding system
 
 # **🗂️ Key Scripts to Review**
 
-### *Core*
+## *Core*
 
-GameFlowController — manages menus → gameplay transitions
+*TickSystem.cs*
 
-TickSystem — core fixed-time simulation loop
+*Controller.cs*
 
-LevelController — loads maps, opponents, and difficulty
+## *Systems*
 
-### *Systems*
+*PathController.cs*
 
-BuildingSystem — countdown timers, spawn triggers
+*Spawner.cs*
 
-UnitCombatSystem — weapon hit detection, cooldowns, targeting
+*EnemyAIController.cs*
 
-UnitPathfindingSystem — node-based path traversal
+*InputController.cs*
 
-ResearchSystem — tech tree progression
+*UnitMovement.cs*
 
-UpgradeSystem — modifies player stat multipliers
+*Unit.cs*
 
-EconomySystem — gold generation & rewards
+*CameraController.cs*
 
-### *Managers*
+*WaitingToAttack.cs*
 
-MapNodeManager — lane generation and editor integration
 
-EnemySpawner — AI-controlled buildings & upgrades
+## *UI*
 
-UnitManager — pooling, spawning, tracking
+*UILineRenderer.cs*
 
-### *UI*
 
-UpgradeMenuUI — displays and applies upgrade points
+## *Utilities*
 
-ResearchMenuUI — unit unlocks and tree progression
+*EditorButton.cs*
 
-LevelSelectUI — map selection and difficulty display
+*KeyHolder.cs*
 
-BuildingUI — countdown timers, readiness indicators
-
-### *Utilities*
-
-StringCatalog — centralized string reference store
-
-EditorPathTool — custom inspector for lane creation
-
-DamageHelper — stat-modified damage calculations
 
 # **🧪 Development Notes**
 
