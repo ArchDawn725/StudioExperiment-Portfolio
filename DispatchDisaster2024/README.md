@@ -164,49 +164,41 @@ Handles movement, speed modifiers, fuel, return-to-base logic, and rewards.
 
 # **🗂️ Key Scripts to Review**
 
-### *Core*
+## *Core*
 
-GameController – orchestrates the level flow, agency selection, upgrades
+*Controller.cs*
 
-LevelController – unlock logic, loading, region initialization
+*MapGenerator/cs*
 
-### *Systems*
+## *Systems*
 
-AStarPathfindingSystem – intersection-based, highway/busy-street weighting
+*TickSystem.cs*
 
-VehicleMovementSystem – handles movement, fuel, special abilities
+*UnitPathfinder.cs*
 
-EmergencySpawnSystem – timed emergencies with region effects
+*PathFinder.cs*
 
-ReputationSystem – manages region scoring and win/lose logic
+*PathNode.cs*
 
-UpgradeSystem – global modifiers applied at mission start
+*GridManager.cs*
 
-TransportSystem – handles hospital/fire station/jail deliveries
+*CameraController.cs*
 
-### *Managers*
+*Emergency.cs*
 
-MapGenerationManager – coroutine-driven procedural map creation
+*Unit.cs*
 
-VehicleManager – vehicle purchasing, initialization, and pooling
+## *UI*
 
-EmergencyManager – active objective tracking
+*QuestPointer.cs*
 
-### *UI*
+*UpgradesMainMenu.cs*
 
-UpgradeUIController – assigns points before each mission
+*UIController.cs*
 
-HomeBasePlacementUI – interactive base placement
+## *Utilities*
 
-EmergencyUI – displays timers, zones, and warnings
-
-### *Utilities*
-
-StringConstants – single reference for all gameplay strings
-
-### *MathHelpers*
-
-CoroutineUtilities
+*KeyHolder.cs*
 
 # **🧪 Development Notes**
 
