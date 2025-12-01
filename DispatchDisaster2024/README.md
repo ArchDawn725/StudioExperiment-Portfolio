@@ -2,7 +2,7 @@
 
 Studio Prototype • Large Simulation • Free on Itch.io (Playable)
 
-*Itch.io Page:*
+*Itch.io Page:* https://archdawn.itch.io/dispatch-disaster-2024-prototype
 
 Availability: Free
 
