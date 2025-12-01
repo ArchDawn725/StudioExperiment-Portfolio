@@ -2,7 +2,7 @@
 
 A Mobile Tug-of-War Strategy Prototype • Studio Leadership Project • Cancelled
 
-*Itch.io Page:*
+*Itch.io Page:* *coming soon*
 
 Availability: Free
 
